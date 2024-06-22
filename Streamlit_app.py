@@ -10,24 +10,37 @@ columns = ['vehicleType', 'yearOfRegistration', 'gearbox', 'horsepower', 'kilome
 
 st.title('Used Car Price Prediction Model')
 
-vehicle_type = st.selectbox('What kind of car is it?', ['coupe', 'suv', 'kleinwagen', 'limousine', 'cabrio', 'bus', 'kombi', 'andere', 'other'])
+# User Input with English options and German Mapping
+
+vehicle_type_options = ['Coupe', 'SUV', 'Small Car', 'Sedan', 'Convertible', 'Bus', 'Station Wagon', 'Other']
+vehicle_type_map = {'Coupe': 0, 'SUV': 1, 'Small Car': 2, 'Sedan': 3, 'Convertible': 4, 'Bus': 5, 'Station Wagon': 6, 'Other': 7}
+vehicle_type = st.selectbox('What kind of car is it?', vehicle_type_options)
+
 car_year_reg = st.slider('How old in years is the car?', 0, 80)
-gearbox = st.selectbox('Automatic or Manual', ['manuell', 'automatik'])
+
+gearbox_options = ['Manual', 'Automatic']
+gearbox_map = {'Manual': 0, 'Automatic': 1}
+gearbox = st.selectbox('Automatic or Manual', gearbox_options)
+
 horsepower = st.slider('Car Horsepower:', 0, 1600)
+
 kilometer = st.slider('Car Mileage:', 0, 150000)
-fueltype = st.selectbox('What kind of Fuel does the car use?', ['diesel', 'benzin', 'andere', 'lpg', 'hybrid', 'cng', 'elektro', 'other'])
-brand = st.selectbox('Car price grade?', ['Budget', 'Economic', 'Luxury'])
-damages = st.selectbox('Any unrepaired damage?', ['ja', 'nein'])
+
+fueltype_options = ['Diesel', 'Petrol', 'Other', 'LPG', 'Hybrid', 'CNG', 'Electric', 'Other']
+fueltype_map = {'Diesel': 0, 'Petrol': 1, 'Other': 2, 'LPG': 3, 'Hybrid': 4, 'CNG': 5, 'Electric': 6, 'Other': 7}
+fueltype = st.selectbox('What kind of Fuel does the car use?', fueltype_options)
+
+brand_options = ['Budget', 'Economy', 'Luxury']
+brand_map = {'Budget': 2, 'Economy': 0, 'Luxury': 1}  
+brand = st.selectbox('Car price grade?', brand_options)
+
+damages_options = ['Yes', 'No']
+damaged_map = {'Yes': 0, 'No': 1}
+damages = st.selectbox('Any unrepaired damage?', damages_options)
+
 adlength = st.slider('How long in days has this car been up for sale?', 0.0000, 400.000, step=0.1)
 
-
-vehicle_map = {'coupe': 0, 'suv': 1, 'kleinwagen': 2, 'limousine': 3, 'cabrio': 4, 'bus': 5, 'kombi': 6, 'andere': 7, 'other': 8}
-gearbox_map = {'manuell': 0, 'automatik': 1}
-fueltype_map = {'diesel': 0, 'benzin': 1, 'andere': 2, 'lpg': 3, 'hybrid': 4, 'cng': 5, 'elektro': 6, 'other': 7}
-damaged_map = {'ja': 0, 'nein': 1}
-brand_map = {'Economic': 0, 'Luxury': 1, 'Budget': 2}
-
-
+# Convert user choice to German using the maps
 vehicle_type = vehicle_map[vehicle_type]
 gearbox = gearbox_map[gearbox]
 fueltype = fueltype_map[fueltype]
@@ -44,4 +57,3 @@ def convert_and_run_model():
 
 
 st.button('Predict car price', on_click=convert_and_run_model)
-
