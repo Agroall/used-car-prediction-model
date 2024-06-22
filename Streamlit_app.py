@@ -15,7 +15,7 @@ model = joblib.load('new_model.joblib')
 columns = ['vehicleType', 'yearOfRegistration', 'gearbox', 'horsepower', 'kilometer', 'fuelType', 'brand', 'notRepairedDamage', 'adTimeLength']
 
 
-st.title('Used Car Price Prediction Model')
+st.title('`Used Car Price Prediction Model`')
 
 # User Input with English options and German Mapping
 
