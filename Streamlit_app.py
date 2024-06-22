@@ -2,9 +2,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
-from lightgbm import LGBMRegressor
+from sklearn.ensemble import HistGradientBoostingRegressor
 
-model = joblib.load('Model/new_model.joblib')
+model = joblib.load('new_model.joblib')
 columns = ['vehicleType', 'yearOfRegistration', 'gearbox', 'horsepower', 'kilometer', 'fuelType', 'brand', 'notRepairedDamage', 'adTimeLength']
 
 
