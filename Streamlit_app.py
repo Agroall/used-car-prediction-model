@@ -57,3 +57,6 @@ def convert_and_run_model():
 
 
 st.button('Predict car price', on_click=convert_and_run_model)
+
+
+st.write('This application was created by Abatan Ayodeji (Agroall)')
