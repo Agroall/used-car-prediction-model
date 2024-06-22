@@ -13,7 +13,7 @@ st.title('Used Car Price Prediction Model')
 # User Input with English options and German Mapping
 
 vehicle_type_options = ['Coupe', 'SUV', 'Small Car', 'Sedan', 'Convertible', 'Bus', 'Station Wagon', 'Other']
-vehicle_type_map = {'Coupe': 0, 'SUV': 1, 'Small Car': 2, 'Sedan': 3, 'Convertible': 4, 'Bus': 5, 'Station Wagon': 6, 'Other': 7}
+vehicle_map = {'Coupe': 0, 'SUV': 1, 'Small Car': 2, 'Sedan': 3, 'Convertible': 4, 'Bus': 5, 'Station Wagon': 6, 'Other': 7}
 vehicle_type = st.selectbox('What kind of car is it?', vehicle_type_options)
 
 car_year_reg = st.slider('How old in years is the car?', 0, 80)
