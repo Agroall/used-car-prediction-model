@@ -16,7 +16,7 @@ This Streamlit app allows you to predict the price of a used car based on variou
 2. **Clone the repository:**
 
    ```bash
-   git clone 
+   git clone https://github.com/Agroall/used-car-prediction-model.git
    cd Car-Price-Prediction-Streamlit
    ```
 
@@ -28,7 +28,7 @@ This Streamlit app allows you to predict the price of a used car based on variou
 
 **Using the App**
 
-1. Open your web browser and navigate to .
+1. Open your web browser and navigate to https://used-car-prediction-model.streamlit.app/#used-car-price-prediction-model.
 2. Select the car's features from the dropdown menus and sliders.
    - **Vehicle Type:** Choose the type of car (coupe, suv, etc.)
    - **Year of Registration:** Enter the car's year of registration.
