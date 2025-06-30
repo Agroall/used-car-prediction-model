@@ -18,7 +18,7 @@ with open("style.css") as f:
 
 
 # Load model
-model = joblib.load("C:/Users/HP/OneDrive/Documents/DS Projects/used-car-prediction-model/Notebooks/new_model.joblib")
+model = joblib.load("Notebooks/new_model.joblib")
 
 # Column mapping
 columns = [
