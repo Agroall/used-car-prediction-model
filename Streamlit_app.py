@@ -18,7 +18,7 @@ with open("style.css") as f:
 
 
 # Load model
-model = joblib.load("https://github.com/Agroall/used-car-prediction-model/blob/main/Notebooks/new_model.joblib")
+model = joblib.load("new_model.joblib")
 
 # Column mapping
 columns = [
